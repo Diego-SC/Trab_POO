@@ -5,7 +5,7 @@ public class Horario {
     private int horaInicio, horaFim, diaDaSemana;
     private static HashMap <Integer, String> diaSemana = new HashMap<>();;
     
-    static public void preencheMapDiaSemana(){
+    static private void preencheMapDiaSemana(){
         diaSemana.put(1, "Segunda");
         diaSemana.put(2, "Terça");
         diaSemana.put(3, "Quarta");
