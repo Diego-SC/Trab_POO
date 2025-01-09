@@ -23,6 +23,11 @@ public class Horario {
         preencheMapDiaSemana();
     }
     
+    @Override
+    public String toString(){
+        return diaSemana.get(diaDaSemana) + ", de " + horaInicio + "h até " + horaFim +"h";
+    }
+    
     public int getHoraInicio() {
         return horaInicio;
     }
@@ -38,7 +43,19 @@ public class Horario {
     public void setHoraFim(int horaFim) {
         this.horaFim = horaFim;
     }
-    
+
+    public int getDiaDaSemana() {
+        return diaDaSemana;
+    }
+
+    public void setDiaDaSemana(int diaDaSemana) {
+        this.diaDaSemana = diaDaSemana;
+    }
+
+    public static HashMap<Integer, String> getDiaSemana() {
+        return diaSemana;
+    }
+
     public int tempoDeAulaMinutos(){
         return (horaFim - horaInicio)*60; //
     }
