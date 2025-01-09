@@ -4,14 +4,15 @@ public class Aluno extends Pessoa{
     private String matricula;
     private int idade;
     
-    Aluno(String m, int i){
+    Aluno(String m, int i, String cpf, String nome){
+        super(cpf, nome);
         this.matricula = m;
         this.idade = i;
     }
     
     @Override
     public String toString(){
-        return "Matrícula: " + this.matricula + " - Idade: " + this.idade;
+        return "Matrícula: " + this.matricula + "\nIdade: " + this.idade + "\nNome: " + getNome() + "\nCPF: " + getCpf();
     }
 
     public String getMatricula() {
