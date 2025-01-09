@@ -1,15 +1,30 @@
 package com.mycompany.trab_poo_diego_ian;
 
-public class Escola {
-    String nome, endereco;
+import java.util.HashSet;
 
-    public Escola(String nome, String endereco) {
+public class Escola {
+    private String nome, endereco;
+    private HashSet <Sala> salas = new HashSet<>();
+
+    public void adicionarSala(Sala s){
+        this.salas.add(s);
+    }
+    
+    public Escola(String nome, String endereco, int numero, int capacidadeDaSala, int numeroDeTurmas) {
         this.nome = nome;
         this.endereco = endereco;
+        this.adicionarSala(new Sala(numero, capacidadeDaSala,numeroDeTurmas,this));
+    }
+    
+    public Escola(String nome, String endereco, Sala sala) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.salas.add(sala);
     }
     
     // criar metodos
 
+    
     public String getNome() {
         return nome;
     }
