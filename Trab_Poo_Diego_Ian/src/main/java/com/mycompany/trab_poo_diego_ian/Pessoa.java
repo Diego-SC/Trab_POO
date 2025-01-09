@@ -1,9 +1,9 @@
 package com.mycompany.trab_poo_diego_ian;
 
-public class Pessoa {
+public abstract class Pessoa {
     private String cpf;
     private String nome;
-
+    
     Pessoa(String c, String n){
         this.cpf = c;
         this.nome = n;
@@ -22,5 +22,3 @@ public class Pessoa {
         return nome;
     }
 }
-
-
