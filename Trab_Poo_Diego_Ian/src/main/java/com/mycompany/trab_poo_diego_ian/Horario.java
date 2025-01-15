@@ -14,11 +14,19 @@ public class Horario {
         diaSemana.put(6, "Sábado");
         diaSemana.put(7, "Domingo");
     }
+    
+    public static Horario criarHorario(int horaInicio, int horaFim, int diaDaSemana){
+        if (horaFim <= horaInicio){
+            System.out.println("Horario de fim maior que horario de inicio");
+            return null;
+        }
+        else
+            return new Horario(horaInicio, horaFim, diaDaSemana);
+    }
 
-    public Horario(int horaInicio, int horaFim, int diaDaSemana) {
+    private Horario(int horaInicio, int horaFim, int diaDaSemana) {
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
-        // ajustar horário de fim sempre ser maior que inicio
         this.diaDaSemana = diaDaSemana;
         preencheMapDiaSemana();
     }

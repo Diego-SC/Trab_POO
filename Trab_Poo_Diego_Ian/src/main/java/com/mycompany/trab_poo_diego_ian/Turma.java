@@ -10,10 +10,6 @@ public class Turma {
         this.anoTurma = a;
         this.numeroAlunos = n;
     }
-    
-    public int TempoAulaSemanalMinutos(){
-        
-    }
 
     public String getCurso() {
         return curso;

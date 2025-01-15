@@ -5,25 +5,42 @@ import java.util.HashSet;
 public class Escola {
     private String nome, endereco;
     private HashSet <Sala> salas = new HashSet<>();
-
-    public void adicionarSala(Sala s){
-        this.salas.add(s);
-    }
+    private HashSet <Aluno> alunos = new HashSet<>();
+    private HashSet <Professor> professores = new HashSet<>();
     
-    public Escola(String nome, String endereco, int numero, int capacidadeDaSala, int numeroDeTurmas) {
+    public Escola(String nome, String endereco, int numero, int capacidadeDaSala, int numeroDeTurmas, Professor p) {
         this.nome = nome;
         this.endereco = endereco;
         this.adicionarSala(new Sala(numero, capacidadeDaSala,numeroDeTurmas,this));
+        this.adicionarProfessor(p);
     }
     
-    public Escola(String nome, String endereco, Sala sala) {
-        this.nome = nome;
-        this.endereco = endereco;
-        this.salas.add(sala);
+    public void adicionarProfessor(Professor p){
+        p.getEscolas().add(this);
+        this.professores.add(p);
     }
     
-    // criar metodos
-
+    public void listarProfessores(){
+        System.out.println("Professores: \n");
+        for (Professor p : professores){
+            System.out.println(p.toString() + "\n");
+        }
+    }
+    
+    public void adicionarAluno(Aluno a){
+        this.alunos.add(a);
+    }
+    
+    public void listarAlunos(){
+        System.out.println("Alunos: \n");
+        for (Aluno a : alunos){
+            System.out.println(a.toString() + "\n");
+        }
+    }
+    
+    public void adicionarSala(Sala s){
+        this.salas.add(s);
+    }
     
     public String getNome() {
         return nome;

@@ -3,11 +3,13 @@ package com.mycompany.trab_poo_diego_ian;
 public class Aluno extends Pessoa{
     private String matricula;
     private int idade;
+    private Escola escola;
     
-    Aluno(String m, int i, String cpf, String nome){
+    Aluno(String m, int i, String cpf, String nome, Escola escola){
         super(cpf, nome);
         this.matricula = m;
         this.idade = i;
+        this.escola = escola;
     }
     
     @Override
