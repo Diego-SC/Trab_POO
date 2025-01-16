@@ -8,11 +8,11 @@ public class Escola {
     private HashSet <Aluno> alunos = new HashSet<>();
     private HashSet <Professor> professores = new HashSet<>();
     
-    public Escola(String nome, String endereco, int numero, int capacidadeDaSala, int numeroDeTurmas, Professor p) {
+    public Escola(String nome, String endereco, int numero, int capacidadeDaSala, Professor prof) {
         this.nome = nome;
         this.endereco = endereco;
-        this.adicionarSala(new Sala(numero, capacidadeDaSala,numeroDeTurmas,this));
-        this.adicionarProfessor(p);
+        this.adicionarSala(new Sala(numero, capacidadeDaSala,this));
+        this.adicionarProfessor(prof);
     }
     
     public void adicionarProfessor(Professor p){

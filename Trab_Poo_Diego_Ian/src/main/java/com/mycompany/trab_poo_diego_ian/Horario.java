@@ -1,9 +1,9 @@
 package com.mycompany.trab_poo_diego_ian;
-import java.util.HashMap;
+import java.util.*;
 
 public class Horario {
     private int horaInicio, horaFim, diaDaSemana;
-    private static HashMap <Integer, String> diaSemana = new HashMap<>();;
+    private static HashMap <Integer, String> diaSemana = new HashMap<>();
     
     static private void preencheMapDiaSemana(){
         diaSemana.put(1, "Segunda");

@@ -5,10 +5,10 @@ public class Aluno extends Pessoa{
     private int idade;
     private Escola escola;
     
-    Aluno(String m, int i, String cpf, String nome, Escola escola){
+    Aluno(String matricula, int idade, String cpf, String nome, Escola escola){
         super(cpf, nome);
-        this.matricula = m;
-        this.idade = i;
+        this.matricula = matricula;
+        this.idade = idade;
         this.escola = escola;
     }
     

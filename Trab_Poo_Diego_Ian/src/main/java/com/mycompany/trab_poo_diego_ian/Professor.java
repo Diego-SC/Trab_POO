@@ -7,8 +7,8 @@ public class Professor extends Pessoa{
     private int numeroAulasMinistradas;
     private ArrayList <Escola> escolas = new ArrayList<>();
 
-    public Professor(String siape, int numeroAulasMinistradas, String c, String n) {
-        super(c, n);
+    public Professor(String siape, int numeroAulasMinistradas, String cpf, String nome) {
+        super(cpf, nome);
         this.siape = siape;
         this.numeroAulasMinistradas = numeroAulasMinistradas;
     }

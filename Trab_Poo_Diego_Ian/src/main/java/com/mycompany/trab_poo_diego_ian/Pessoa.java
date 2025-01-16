@@ -4,9 +4,9 @@ public abstract class Pessoa {
     private String cpf;
     private String nome;
     
-    Pessoa(String c, String n){
-        this.cpf = c;
-        this.nome = n;
+    Pessoa(String cpf, String nome){
+        this.cpf = cpf;
+        this.nome = nome;
     }
     
     public void setCpf(String cpf) {
