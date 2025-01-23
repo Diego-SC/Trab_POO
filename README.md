@@ -19,3 +19,5 @@ Verificações feitas:
 - Professor
 - Sala
 - Turma
+
+Obs.: DELETAR TURMA
