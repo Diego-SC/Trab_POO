@@ -8,7 +8,7 @@ public class Aluno extends Pessoa{
     private Escola escola;
     private ArrayList<Turma> turmas =  new ArrayList<>();
     
-    Aluno(String matricula, int idade, String cpf, String nome, Escola escola, Turma t){
+    public Aluno(String matricula, int idade, String cpf, String nome, Escola escola, Turma t){
         super(cpf, nome);
         this.matricula = matricula;
         this.idade = idade;
@@ -16,27 +16,28 @@ public class Aluno extends Pessoa{
         this.turmas.add(t);
     }
     
+    @Override
+    public String toString(){
+        return "Matrícula: " + this.matricula + "\nIdade: " + this.idade + "\nNome: " + getNome() + "\nCPF: " + getCpf() + "\n";
+    }
+    
     public void adicionarTurma(Turma t){
         this.turmas.add(t);
-        t.aumentar();
-        t.getAluno().add(this);   
+        t.aumentarNumAlunos();
+        t.getAlunos().add(this);   
     }
     
     public void removeTurma(Turma t){
         if(turmas.size() > 1){
-            t.diminuir();
+            t.diminuirNumAlunos();
             this.turmas.remove(t); 
-            t.getAluno().remove(this);
+            t.getAlunos().remove(this);
         }
        else
             System.out.println("O aluno precisa estar em pelo menos uma turma.");
     }
     
-    @Override
-    public String toString(){
-        return "Matrícula: " + this.matricula + "\nIdade: " + this.idade + "\nNome: " + getNome() + "\nCPF: " + getCpf();
-    }
-
+    // get e set
     public String getMatricula() {
         return matricula;
     }

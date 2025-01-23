@@ -10,8 +10,12 @@ public class Sala {
     public Sala(int numero, int capacidadeDaSala, Escola escola) {
         this.numero = numero;
         this.capacidadeDaSala = capacidadeDaSala;
-        this.numeroDeTurmas = 0;
         this.escola = escola;
+    }
+    
+    @Override
+    public String toString(){
+        return "Sala: " + numero + "\nEscola: " + escola.getNome() + "\nCapacidade: " + capacidadeDaSala + "\nTurmas: " + numeroDeTurmas + "\n";
     }
     
     public void adicionarTurma(Turma t){
@@ -26,27 +30,35 @@ public class Sala {
         t.setSala(s);
     }
 
+    // get e set
     public int getNumero() {
         return numero;
     }
-
     public void setNumero(int numero) {
         this.numero = numero;
     }
-
     public int getCapacidadeDaSala() {
         return capacidadeDaSala;
     }
-
     public void setCapacidadeDaSala(int capacidadeDaSala) {
         this.capacidadeDaSala = capacidadeDaSala;
     }
-
     public int getNumeroDeTurmas() {
         return numeroDeTurmas;
     }
-
     public void setNumeroDeTurmas(int numeroDeTurmas) {
         this.numeroDeTurmas = numeroDeTurmas;
+    }
+    public Escola getEscola() {
+        return escola;
+    }
+    public void setEscola(Escola escola) {
+        this.escola = escola;
+    }
+    public ArrayList<Turma> getTurmas() {
+        return turmas;
+    }
+    public void setTurmas(ArrayList<Turma> turmas) {
+        this.turmas = turmas;
     }
 }

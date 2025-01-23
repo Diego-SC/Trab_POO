@@ -33,29 +33,29 @@ public class Horario {
     
     @Override
     public String toString(){
-        return diaSemana.get(diaDaSemana) + ", de " + horaInicio + "h até " + horaFim +"h";
+        return diaSemana.get(diaDaSemana) + ", de " + horaInicio + "h até " + horaFim +"h\n";
     }
     
+    public int tempoDeAulaMinutos(){
+        return (horaFim - horaInicio)*60;
+    }
+    
+    // get e set
     public int getHoraInicio() {
         return horaInicio;
     }
-
     public void setHoraInicio(int horaInicio) {
         this.horaInicio = horaInicio;
     }
-
     public int getHoraFim() {
         return horaFim;
     }
-
     public void setHoraFim(int horaFim) {
         this.horaFim = horaFim;
     }
-
     public int getDiaDaSemana() {
         return diaDaSemana;
     }
-
     public void setDiaDaSemana(int diaDaSemana) {
         this.diaDaSemana = diaDaSemana;
     }
@@ -63,9 +63,4 @@ public class Horario {
     public static HashMap<Integer, String> getDiaSemana() {
         return diaSemana;
     }
-
-    public int tempoDeAulaMinutos(){
-        return (horaFim - horaInicio)*60; //
-    }
-    
 }
