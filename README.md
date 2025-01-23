@@ -9,12 +9,13 @@ Cardinalidades feitas:
 
 Agregações feitas:
 - Escola para Aluno
-- 
+- Escola para Sala
 
-OBS.:
-- Fazer a agregação de Escola para Aluno e Sala
-
-Verificações:
-- funções get e set dos atributos
-- toString sobrescrito
-- criar construtores
+Verificações feitas:
+- Aluno
+- Escola
+- Pessoa
+- Horario
+- Professor
+- Sala
+- Turma
