@@ -10,8 +10,9 @@ Cardinalidades feitas:
 Agregações feitas:
 - Escola para Aluno
 - Escola para Sala
+- Turma pro Resto
 
-Verificações feitas:
+Verificado:
 - Aluno
 - Escola
 - Pessoa
@@ -19,5 +20,3 @@ Verificações feitas:
 - Professor
 - Sala
 - Turma
-
-Obs.: DELETAR TURMA
