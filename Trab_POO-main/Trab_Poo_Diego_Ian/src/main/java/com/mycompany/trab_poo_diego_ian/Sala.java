@@ -24,7 +24,7 @@ public class Sala {
         t.setSala(this);
     }
     
-    public void trocarTurma(Turma t, Sala s){
+    public void trocarSala(Turma t, Sala s){
         this.turmas.remove(t);
         this.numeroDeTurmas--;
         t.setSala(s);

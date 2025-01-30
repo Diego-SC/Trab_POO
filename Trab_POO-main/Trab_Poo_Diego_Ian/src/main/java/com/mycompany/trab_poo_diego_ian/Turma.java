@@ -22,8 +22,39 @@ public class Turma {
         p.aumentarAulas(1);
     }
     
+    @Override
     public String toString(){
-        return "";
+        return "Curso: " + curso + "\nAno: " + anoTurma + "\nAlunos: " + numeroAlunos + "\nProfessor: " + prof.getNome() + "\nSala: " + sala.getNumero() + "\n";
+    }
+    
+    //Pontapear = chutar
+    public int pontapearTurma(Turma t){
+        Sala temp = this.sala;
+        int cont = 0;
+        
+        //Remover de Salas
+        sala.getTurmas().remove(this);
+        sala = null;
+        
+        //Remover de Professores
+        prof.getTurmas().remove(this);
+        prof = null;
+        
+        //Remover de Alunos
+        for(Aluno a : alunos){
+            if(a.getTurmas().size() > 1){
+                a.removeTurma(this);
+            }
+            else{
+                temp.adicionarTurma(t);
+                t.adicionarAluno(a);
+                a.removeTurma(this);
+                cont++;
+            }
+        }
+        //Lembrar se a turma não for utilizada tem que ser excluida
+        //sendo assim 0 é para excluir e 1 é para manter
+        return (cont == 0 ? 0 : 1);
     }
     
     public void aumentarNumAlunos(){

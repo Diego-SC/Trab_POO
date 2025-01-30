@@ -9,6 +9,7 @@ public abstract class Pessoa {
         this.nome = nome;
     }
     
+    //get e set
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
