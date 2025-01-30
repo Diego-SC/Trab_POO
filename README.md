@@ -20,3 +20,7 @@ Verificado:
 - Professor
 - Sala
 - Turma
+
+Testes:
+- Agregação funciona
+- Horario está coerente
