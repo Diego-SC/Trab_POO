@@ -12,8 +12,11 @@ public class Aluno extends Pessoa{
         super(cpf, nome);
         this.matricula = matricula;
         this.idade = idade;
+        
         this.escola = escola;
-        this.turmas.add(t);
+        this.escola.getAlunos().add(this);
+        
+        t.adicionarAluno(this);
     }
     
     @Override

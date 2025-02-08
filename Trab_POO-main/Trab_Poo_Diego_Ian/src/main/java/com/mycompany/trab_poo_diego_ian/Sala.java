@@ -11,6 +11,7 @@ public class Sala {
         this.numero = numero;
         this.capacidadeDaSala = capacidadeDaSala;
         this.escola = escola;
+        this.escola.getSalas().add(this);
     }
     
     @Override

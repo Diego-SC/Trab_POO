@@ -15,22 +15,38 @@ public class Turma {
     public Turma(String curso, int ano, Sala sala, Horario hora, Professor p){
         this.curso = curso;
         this.anoTurma = ano;
+        
         this.sala = sala;
-        sala.adicionarTurma(this);
+        this.sala.adicionarTurma(this);
+        
         this.horas.add(hora);
+        
         this.prof = p;
+        p.getTurmas().add(this);
         p.aumentarAulas(1);
     }
     
     @Override
     public String toString(){
-        return "Curso: " + curso + "\nAno: " + anoTurma + "\nAlunos: " + numeroAlunos + "\nProfessor: " + prof.getNome() + "\nSala: " + sala.getNumero() + "\n";
+        String professor;
+        int numSala;
+        if (sala == null){
+            numSala = 0;
+            professor = null;
+        }
+        else{
+            numSala = sala.getNumero();
+            professor = prof.getNome();
+        }
+            
+        return "Curso: " + curso + "\nAno: " + anoTurma +
+               "\nAlunos: " + numeroAlunos + "\nProfessor: " + professor +
+               "\nSala: " + numSala +
+               "\nTempo de Aula Semanal: " + this.tempoAulaSemanalMinutos() + "\n";
     }
     
     //Pontapear = chutar
-    public int pontapearTurma(Turma t){
-        Sala temp = this.sala;
-        int cont = 0;
+    public void pontapearTurma(){
         
         //Remover de Salas
         sala.getTurmas().remove(this);
@@ -40,21 +56,14 @@ public class Turma {
         prof.getTurmas().remove(this);
         prof = null;
         
+        horas.clear();
+        this.numeroAlunos = 0;
+        
         //Remover de Alunos
         for(Aluno a : alunos){
-            if(a.getTurmas().size() > 1){
-                a.removeTurma(this);
-            }
-            else{
-                temp.adicionarTurma(t);
-                t.adicionarAluno(a);
-                a.removeTurma(this);
-                cont++;
-            }
+            a.getTurmas().remove(this);
         }
-        //Lembrar se a turma não for utilizada tem que ser excluida
-        //sendo assim 0 é para excluir e 1 é para manter
-        return (cont == 0 ? 0 : 1);
+        alunos.clear();
     }
     
     public void aumentarNumAlunos(){
@@ -80,6 +89,11 @@ public class Turma {
     }
     
     public void adicionarHora(Horario h){
+        if (h == null){
+            System.out.println("Impossível inserir o horário pois é inválido.");
+            return;
+        }
+        
         this.horas.add(h);
         this.prof.aumentarAulas(1);
     }
@@ -107,7 +121,7 @@ public class Turma {
     }
     public void setSala(Sala sala) {
         this.sala = sala;
-        sala.adicionarTurma(this);
+        sala.getTurmas().add(this);
     }
     public String getCurso() {
         return curso;

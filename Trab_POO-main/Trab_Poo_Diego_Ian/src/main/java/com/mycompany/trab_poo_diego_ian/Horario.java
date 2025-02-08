@@ -20,6 +20,10 @@ public class Horario {
             System.out.println("Horario de fim maior que horario de inicio");
             return null;
         }
+        else if((horaInicio > 24 || horaInicio < 7) || (horaFim > 24 || horaFim < 7)){
+            System.out.println("Horario fora do invervalo [7,24]");
+            return null;
+        }
         else
             return new Horario(horaInicio, horaFim, diaDaSemana);
     }
